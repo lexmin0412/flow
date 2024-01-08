@@ -2,14 +2,16 @@ import {
   createBrowserRouter,
 	Link
 } from "react-router-dom";
-import Home from "../pages/home";
 import AntdDemo from "../pages/antd-demo";
+import PageWrapper from "../components/layout/page-wrapper";
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <Home />,
+      element: (
+        <PageWrapper />
+      ),
     },
     {
       path: "/antd-demo",
@@ -30,7 +32,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/react-template/",
+    basename: "/flow/",
   }
 );
 
