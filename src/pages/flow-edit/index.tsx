@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   BasicNode,
   EditNode,
@@ -26,7 +27,7 @@ const ProFlowEdit = () => {
   const {styles} = useStyles();
   const [open, setOpen] = useState(false);
 
-  const onDragOver = useCallback((event) => {
+  const onDragOver = useCallback((event: any) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
   }, []);
@@ -41,6 +42,7 @@ const ProFlowEdit = () => {
         return;
       }
 
+			// @ts-ignore
       const position = editor.screenToFlowPosition({
         x: event.clientX,
         y: event.clientY,

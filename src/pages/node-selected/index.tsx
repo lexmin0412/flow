@@ -6,19 +6,18 @@ import {
   useFlowViewer,
 } from "@ant-design/pro-flow";
 import {useState} from "react";
-import PageWrapper from "../../components/layout/page-wrapper";
 import useStyles from "./css/index.style";
 import {edges, nodes} from "./data";
 
 function App() {
   const {selectNode, selectEdges, selectNodes} = useFlowViewer();
-  const [node, setNode] = useState(null);
+  const [node, setNode] = useState<any>(null);
   const {styles} = useStyles();
 
   return (
     <div className={styles.container}>
       <FlowView
-        onNodeClick={(e, node) => {
+        onNodeClick={(_e, node) => {
           setNode(node);
           selectNodes(["a1", "a2", "a3"], SelectType.SUB_SELECT);
           selectNode(node.id, SelectType.SELECT);
